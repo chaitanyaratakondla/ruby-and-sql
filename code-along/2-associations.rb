@@ -4,6 +4,14 @@
 # rails runner code-along/2-associations.rb
 
 # 1. Query all of the contacts at Apple Inc.
+acreed = Company.where({name:"Assassins Co."})[0]
+acreed_id = acreed.id
+contacts = Contact.where({company_id: acreed_id})
+puts "Known Assassins: #{contacts.count}"
+for contact in contacts
+    puts "#{contact.first_name} #{contact.last_name} - #{contact.company.name}"
+end
+# contact.company.name works becuase we put the association that conacts belong to a company in the models
 
 # 2. add association to contacts in Company model
 

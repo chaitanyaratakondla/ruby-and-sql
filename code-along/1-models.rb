@@ -53,4 +53,8 @@ puts syrian_company.inspect
 new_company = Company.new
 new_company.name = "Weyland-Yutani"
 new_company.url = "aliens.com"
-new_company
+new_company.city = "New York"
+new_company.state = "New York"
+new_company.save
+
+puts Company.all.inspect
