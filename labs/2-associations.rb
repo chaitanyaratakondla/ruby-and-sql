@@ -12,6 +12,14 @@
 # Elon Musk - elon@tesla.com - Tesla, Inc.
 # Tim Cook - tim@apple.com - Apple Inc.
 
+puts "----------------------------------"
+puts "Contacts: #{Contact.all.count}"
+all_contacts = Contact.all
+#allcontacts is an array. Therefore, start a loop
+for contact in all_contacts
+    puts "#{contact.first_name} #{contact.last_name} - #{contact.email} - #{contact.company.name}"
+end
+
 # 2. similar to above, but this time organized by company, write code to display each company (name) and its contacts, e.g.:
 
 # ---------------------------------
@@ -24,3 +32,12 @@
 #
 # Tesla, Inc.
 # Elon Musk - elon@tesla.com
+
+puts "----------------------------------"
+for company in Company.all
+    puts company.name
+    for details in company.contacts
+        puts "#{details.first_name} #{details.last_name} - #{details.email}"
+    end
+    puts ""
+end
